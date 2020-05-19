@@ -7,7 +7,7 @@
     tools:context=".ui.activity.PackageList">
 
     <!--    layout_constraintStart_toStartOf: apply the constraint based on the beginning of the parent. It is its start point.-->
-    <!--    android:layout_width="0dp" : inside the ImageView, 0dp means match constraint-->
+    <!--    android:layout_width="0dp" : 0dp means match constraint-->
     <ImageView
         android:id="@+id/Banner"
         android:layout_width="0dp"
@@ -21,11 +21,12 @@
         app:srcCompat="@android:color/holo_blue_dark" />
 
     <TextView
-        android:id="@+id/GreatValues"
+        android:id="@+id/GreatDeals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Great Values"
+        android:text="Great Deals"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +41,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Canada"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GreatValues"
-        app:layout_constraintTop_toBottomOf="@+id/GreatValues" />
+        app:layout_constraintStart_toStartOf="@+id/GreatDeals"
+        app:layout_constraintTop_toBottomOf="@+id/GreatDeals" />
 
+    <ListView
+        android:id="@+id/package_list_listview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/package_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Banner"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
