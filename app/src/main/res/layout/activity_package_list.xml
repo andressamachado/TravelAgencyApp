@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.PackageList">
+    tools:context=".ui.activity.PackageListActivity">
 
     <!--    layout_constraintStart_toStartOf: apply the constraint based on the beginning of the parent. It is its start point.-->
     <!--    android:layout_width="0dp" : 0dp means match constraint-->
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Canada"
+        android:text="Brazil"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"

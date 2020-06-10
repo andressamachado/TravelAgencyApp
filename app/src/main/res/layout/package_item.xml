@@ -2,71 +2,85 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/package_item_image"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/package_item_cardview"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/sao_paulo_sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="São Paulo"
-        app:layout_constraintStart_toStartOf="@+id/package_item_image"
-        app:layout_constraintEnd_toEndOf="@id/package_item_image"
-        app:layout_constraintTop_toTopOf="@id/package_item_image"
-        app:layout_constraintBottom_toBottomOf="@id/package_item_image"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:textSize="14sp"
         android:layout_margin="8dp"
-        android:padding="8dp"
-        android:background="@android:drawable/screen_background_dark_transparent"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"/>
-
-    <View
-        android:id="@+id/package_item_divider"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/holo_orange_dark"
-        app:layout_constraintTop_toBottomOf="@id/package_item_image"
-        />
-
-    <TextView
-        android:id="@+id/package_item_duration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2 days"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_margin="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/package_item_divider"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/package_item_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="R$243,99"
-        app:layout_constraintTop_toBottomOf="@+id/package_item_duration"
-        app:layout_constraintStart_toStartOf="@+id/package_item_duration"
-        android:textSize="20sp"
-        android:textColor="@android:color/holo_green_dark"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        />
+            <ImageView
+                android:id="@+id/package_item_image"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@sample/travelPackages.json/travelPackages/image" />
+
+            <TextView
+                android:id="@+id/package_item_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/screen_background_dark_transparent"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/package_item_image"
+                app:layout_constraintEnd_toEndOf="@id/package_item_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/package_item_image"
+                app:layout_constraintTop_toTopOf="@id/package_item_image"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="@sample/travelPackages.json/travelPackages/local" />
+
+            <View
+                android:id="@+id/package_item_divider"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@android:color/holo_orange_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/package_item_image" />
+
+            <TextView
+                android:id="@+id/package_item_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/package_item_divider"
+                tools:text="@sample/travelPackages.json/travelPackages/days" />
+
+            <TextView
+                android:id="@+id/package_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/package_item_duration"
+                app:layout_constraintTop_toBottomOf="@id/package_item_duration"
+                tools:text="@sample/travelPackages.json/travelPackages/price" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
