@@ -12,6 +12,6 @@ public class DurationUtil {
         if (duration > 1) {
             return duration + PLURAL;
         }
-        return duration + SINGULAR;
+        return SINGULAR;
     }
 }

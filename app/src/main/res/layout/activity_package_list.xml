@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.PackageListActivity">
+    android:layout_height="match_parent">
 
+    <!--    Tools: Modifications only at the design view-->
     <!--    layout_constraintStart_toStartOf: apply the constraint based on the beginning of the parent. It is its start point.-->
     <!--    android:layout_width="0dp" : 0dp means match constraint-->
     <ImageView
-        android:id="@+id/Banner"
+        android:id="@+id/banner"
         android:layout_width="0dp"
         android:layout_height="120dp"
+        android:contentDescription="@string/initial_packages_banner_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,40 +22,42 @@
         app:srcCompat="@android:color/holo_blue_dark" />
 
     <TextView
-        android:id="@+id/GreatDeals"
+        android:id="@+id/great_deals_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Great Deals"
+        android:text="@string/great_deals_banner_text"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/banner"
+        app:layout_constraintEnd_toEndOf="@id/banner"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/banner"
+        app:layout_constraintTop_toTopOf="@id/banner"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/Country"
+        android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Brazil"
+        android:text="@string/country_selected"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GreatDeals"
-        app:layout_constraintTop_toBottomOf="@+id/GreatDeals" />
+        app:layout_constraintStart_toStartOf="@+id/great_deals_list"
+        app:layout_constraintTop_toBottomOf="@+id/great_deals_list" />
 
     <ListView
         android:id="@+id/package_list_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/package_item"
-        app:layout_constraintStart_toStartOf="parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Banner"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        tools:listitem="@layout/package_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

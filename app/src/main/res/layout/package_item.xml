@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/package_item_cardview"
@@ -11,9 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,8 +29,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@sample/travelPackages.json/travelPackages/image" />
+                tools:src="@sample/packages.json/packages/image" />
 
+            <!--            horizontal bias of 0.0 means it is referencing to the most right position-->
+            <!--                vertical bias 1.0 means 100% which means it is referencing to the bottom -->
             <TextView
                 android:id="@+id/package_item_local"
                 android:layout_width="wrap_content"
@@ -45,7 +49,7 @@
                 app:layout_constraintStart_toStartOf="@+id/package_item_image"
                 app:layout_constraintTop_toTopOf="@id/package_item_image"
                 app:layout_constraintVertical_bias="1.0"
-                tools:text="@sample/travelPackages.json/travelPackages/local" />
+                tools:text="@sample/packages.json/packages/local" />
 
             <View
                 android:id="@+id/package_item_divider"
@@ -67,7 +71,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/package_item_divider"
-                tools:text="@sample/travelPackages.json/travelPackages/days" />
+                tools:text="@sample/packages.json/packages/days" />
 
             <TextView
                 android:id="@+id/package_item_price"
@@ -79,7 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/package_item_duration"
                 app:layout_constraintTop_toBottomOf="@id/package_item_duration"
-                tools:text="@sample/travelPackages.json/travelPackages/price" />
+                tools:text="@sample/packages.json/packages/price" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
